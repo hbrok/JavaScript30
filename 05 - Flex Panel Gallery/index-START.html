@@ -64,11 +64,11 @@
 				justify-content: center;
 				align-items: center;
 			}
-			
+
 			.panel > *:first-child {
 				transform: translateY(-100%);
 			}
-			
+
 			.panel > *:last-child {
 				transform: translateY(100%);
 			}
@@ -87,7 +87,7 @@
 				flex: 5;
 				font-size:40px;
 			}
-			
+
 			.panel.open-active > *:first-child,
 			.panel.open-active > *:last-child {
 				transform: translateY(0);
@@ -126,7 +126,7 @@
 
 		<script>
 			const panels = document.querySelectorAll('.panel');
-			
+
 			function toggleOpen(e) {
 				panels.forEach(panel => {
 					// Open clicked panel & close open panel.
@@ -135,13 +135,13 @@
 					}
 				});
 			}
-			
+
 			function toggleActive(e) {
 				if (e.propertyName.includes('flex')) {
 					this.classList.toggle('open-active');
 				}
 			}
-			
+
 			panels.forEach(panel => panel.addEventListener('click', toggleOpen));
 			panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
 		</script>
